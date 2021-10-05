@@ -2,7 +2,7 @@ job('New_DSL_Job') {
     scm {
         git('https://github.com/singhkarandx/JenkinsTest.git', 'main') 
     }
-   stringParam(BRANCH,null,'Please Enter a Branch')
+   stringParam('BRANCH',null,'Please Enter a Branch')
     steps {
         shell('''
 echo "Value of BRANCH is $BRANCH"
