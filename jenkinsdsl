@@ -7,8 +7,10 @@ job('New DSL Job') {
     }
    
     steps {
-        shell('chmod +x $WORKSPACE/count.sh
-        bash count.sh')
+        shell('''
+        chmod +x $WORKSPACE/count.sh
+        bash count.sh
+        ''')
         
     }
 }
