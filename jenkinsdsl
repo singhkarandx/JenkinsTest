@@ -1,14 +1,13 @@
 job('New_DSL_Job') {
     scm {
-        git('https://github.com/singhkarandx/JenkinsTest.git') {  node -> // is hudson.plugins.git.GitSCM
-            node / gitConfigName('karan')
-            node / gitConfigEmail('singhkarandx@gmail.com')
-        }
+        git('https://github.com/singhkarandx/JenkinsTest.git', 'main') 
     }
-   
+   stringParam(BRANCH,null,'Please Enter a Branch')
     steps {
-        shell('''chmod +x $WORKSPACE/count.sh
-        bash count.sh
+        shell('''
+echo "Value of BRANCH is $BRANCH"
+chmod +x $WORKSPACE/count.sh
+bash count.sh
         ''')
         
     }
