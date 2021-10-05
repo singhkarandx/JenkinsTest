@@ -1,4 +1,4 @@
-job('New DSL Job') {
+job('New_DSL_Job') {
     scm {
         git('https://github.com/singhkarandx/JenkinsTest.git') {  node -> // is hudson.plugins.git.GitSCM
             node / gitConfigName('karan')
@@ -7,8 +7,7 @@ job('New DSL Job') {
     }
    
     steps {
-        shell('''
-        chmod +x $WORKSPACE/count.sh
+        shell('''chmod +x $WORKSPACE/count.sh
         bash count.sh
         ''')
         
