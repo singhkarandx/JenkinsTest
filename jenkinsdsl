@@ -1,4 +1,4 @@
-job('New DSL Jobn') {
+job('New DSL Job') {
     scm {
         git('https://github.com/singhkarandx/JenkinsTest.git') {  node -> // is hudson.plugins.git.GitSCM
             node / gitConfigName('karan')
