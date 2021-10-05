@@ -1,0 +1,17 @@
+job('New DSL Jobn') {
+    scm {
+        git('git://github.com/singhkarandx.git') {  node -> // is hudson.plugins.git.GitSCM
+            node / gitConfigName('karan')
+            node / gitConfigEmail('singhkarandx@gmail.com')
+        }
+    }
+    triggers {
+        scm('H/5 * * * *')
+    }
+   
+    steps {
+        shell('echo Hello World!')
+        shell('chmod +x $WORKSPACE/count.sh')
+        shell('bash count.sh')
+    }
+}
